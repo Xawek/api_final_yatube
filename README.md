@@ -87,9 +87,9 @@ python3 manage.py runserver
 ##### Примечание \ Note
 
 _При переходе по ссылке http://127.0.0.1:8000/ (по умолчанию) после запуска сервера, вы увидите страницу с ошибкой. Не предусмотрено графическое отображение._
-_If you follow the link http://127.0.0.1:8000/ (default) after starting the server, you will see an error page. Graphic display is not provided._
+_If you follow link http://127.0.0.1:8000/ (default) after starting the server, you will see an error page. Graphic display is not provided._
 
-##Документация к API проекта Yatube (v1) \ Yatube project API documentation (v1)
+## Документация к API проекта Yatube (v1) \ Yatube project API documentation (v1)
 http://127.0.0.1:8000/redoc/ 
 
 ## Остановить веб-сервер \ Stop web server
