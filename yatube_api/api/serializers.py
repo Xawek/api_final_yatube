@@ -1,6 +1,6 @@
 from rest_framework import serializers, validators
 
-from posts.models import Comment, Post, Follow, Group, User
+from posts.models import Comment, Follow, Group, Post, User
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -53,11 +53,11 @@ class FollowSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def validate(self, data):
+    def validate(self, object):
         user = self.context['request'].user
-        follow = data['following']
+        follow = object['following']
         if user == follow:
             raise serializers.ValidationError(
                 'Подписаться на себя? - Не сегодня!'
             )
-        return data
+        return object
