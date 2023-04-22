@@ -123,26 +123,27 @@ http://127.0.0.1:8000/api/v1/posts/
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/
 ```
-где post_id - идентификатор(цифровой) запрашиваемой публикации
-where post_id - identifier (integer) requested publication
+где \ where:
+  + post_id - идентификатор(цифровой) запрашиваемой публикации
+  + post_id - identifier (integer) requested publication
 
 + ### Получение комментариев публикации \ getting post comments (GET):
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/comments/
 ```
-где post_id - идентификатор(цифровой) запрашиваемой публикации
-where post_id - identifier (integer) requested publication
+где \ where:
+  + post_id - идентификатор(цифровой) запрашиваемой публикации
+  + post_id - identifier (integer) requested publication
 
 + ### Получение комментариев поста \ Getting comments post (GET):
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/comments/comments_id
 ```
-где: 
-  post_id - идентификатор(цифровой) запрашиваемой публикации
-  comments_id - идентификатор(цифровой) запрашиваемого комментария
-where:
-  post_id - identifier (integer) requested publication
-  comments_id - identifier (integer) requested commentary
+где \ where:
+  + post_id - идентификатор(цифровой) запрашиваемой публикации
+  + post_id - identifier (integer) requested publication
+  + comments_id - идентификатор(цифровой) запрашиваемого комментария
+  + comments_id - identifier (integer) requested commentary
 
 + ### Получение списка групп публикаций \ Getting publications groups list (GET):
 ```
@@ -159,24 +160,25 @@ where: group_id - identifier (PK - specified when creating in the admin area) th
 ## Для авторизованных пользователей работа API доступна в полном обьёме \ For authorized users API is available in full
 
 + ### создание групп \ creating a group
-доступно через интерфейс администрирования (админ-зону Django) \ available through the administration interface (Django)
+создание доступно через интерфейс администрирования (админ-зону Django) \ creating available through the administration interface (Django)
+
 для создания суперпользователя выполните команду \ create superuser by command
 ```
 python manage.py createsuperuser
 ```
 создайте учётную запись суперпользователя \ create superuser account
 ##### Примечание \ Note
-  если вы забудете имя пользователя или пароль, то при наличии доступа к серверу вы всегда можете создать нового суперпользователя
-  if you have forgotten your login or password and if you have access to server, you can always create new superuser
+  + _если вы забудете имя пользователя или пароль, то при наличии доступа к серверу вы всегда можете создать нового суперпользователя_
+  + _if you have forgotten your login or password and if you have access to server, you can always create new superuser_
 
 при запушенном проекте перейдите по адресу http://127.0.0.1:8000/admin/ 
-вы увидите страницу авторизации
-авторизуйтесь использовав данные указанные при создании суперпользователя
+вы увидите страницу авторизации,
+авторизуйтесь использовав данные указанные при создании суперпользователя,
 вам станет доступна панель администрирования Django где вы можите управлять проектом в том числе станет доступно создание групп
 
 when project is running at http://127.0.0.1:8000/admin/
-you will see login page
-log in as superuser
+you will see login page,
+log in as superuser,
 Django administration panel becomes available to you, where you can manage project, including creating a group becomes available
 
 + ### получить JWT-токен(срок активности токена по умолчанию 24 часа) \ get JWT-token (token is active by default 24 hours)
@@ -190,11 +192,11 @@ http://127.0.0.1:8000/api/v1/jwt/create/
   "password": "пример/example"
 }
 ```
-где в графу \ where in field пример/example
-поля "username": "пример/example" необходимо передать логин
-in field "username": "пример/example" must contain login
-поля "password": "пример/example" необходимо передать пароль
-in field "username": "пример/example" must contain password
+где в графу "пример" \ where in field "example":
+  + поля "username": "пример/example" необходимо передать логин
+  + in field "username": "пример/example" must contain login
+  + поля "password": "пример/example" необходимо передать пароль
+  + in field "username": "пример/example" must contain password
 
  Пример ответа \ Response Example
 {
@@ -202,10 +204,10 @@ in field "username": "пример/example" must contain password
     "access": "yyyyyyyyy"
 } 
 где \ where:
-  в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" данные для обновления токена
-  in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token
-  в поле "yyyyyyyyy" строки "access": "yyyyyyyyy" JWT-токен
-  in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data is token
+  + в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" данные для обновления токена
+  + in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token
+  + в поле "yyyyyyyyy" строки "access": "yyyyyyyyy" JWT-токен
+  + in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data is token
 
 + ### обновить JWT-токен \ refresh JWT-token
 если ваш токен утрачен, украден или каким-то иным образом скомпрометирован, вам понадобится отключить его и получить новый
@@ -220,8 +222,8 @@ http://127.0.0.1:8000/api/v1/jwt/refresh/
   "refresh": "xxxxxxxxx"
 }
 ```
- в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" указать данные для обновления токена полученные ранее
- in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token (received earlier)
+  + в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" указать данные для обновления токена полученные ранее
+  + in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token (received earlier)
 
 + ### проверить JWT-токен \ validate JWT-token
 ```
@@ -241,19 +243,22 @@ http://127.0.0.1:8000/api/v1/posts/
 }
 ```
 где в графу "пример" \ where in field "example"
-  поля "text": "пример", необходимо передать текст поста
-  field "text": "example" must contain post text
-  поля "image": "пример", необходимо передать закодированное в виде строки изображение или ничего
-  field "image": "example" must contain string-encoded image or nothing
-  поля "group": пример/example" необходимо передать id сообщества или ничего
-  field "group": "example" must contain community id or nothing
+  + поля "text": "пример", необходимо передать текст поста
+  + field "text": "example" must contain post text
+  + поля "image": "пример", необходимо передать закодированное в виде строки изображение или ничего
+  + field "image": "example" must contain string-encoded image or nothing
+  + поля "group": пример/example" необходимо передать id сообщества или ничего
+  + field "group": "example" must contain community id or nothing
 
 
 + ### Создание коментария \ Create comment (POST):
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/comments/
 ```
-где post_id - номер запрашиваемого поста \ where post_id - is post number
+где \ where:
+  + post_id - номер запрашиваемого поста
+  + where post_id - is post number
+
 в теле запроса передать \ pass in body of the request:
 ```
 {
@@ -266,18 +271,19 @@ http://127.0.0.1:8000/api/v1/posts/post_id/comments/
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/
 ```
-где post_id - идентификатор(цифровой) нужной публикации
-where post_id - identifier (integer) of desired publication
+где \ where:
+  + post_id - идентификатор(цифровой) нужной публикации
+  + post_id - identifier (integer) of desired publication
 
 + ### Обновление коментария \ Comment update (PUT)/Частичное обновление коментария \ comment part update (PATCH)/Удаление комментария \ Delete comment (DELETE):
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/comments/comments_id
 ```
 где \ where:
-  post_id - идентификатор(цифровой) нужной публикации
-  post_id - identifier (integer) of desired publication
-  comments_id - идентификатор(цифровой) нужного комментария
-  comments_id - identifier (integer) of desired comment
+  + post_id - идентификатор(цифровой) нужной публикации
+  + post_id - identifier (integer) of desired publication
+  + comments_id - идентификатор(цифровой) нужного комментария
+  + comments_id - identifier (integer) of desired comment
 
 + ### Получение списка подпискок пользователя, сделавшего запрос \ Get list of subscriptions that request for user (GET)
 ```
