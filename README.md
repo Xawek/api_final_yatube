@@ -199,10 +199,12 @@ http://127.0.0.1:8000/api/v1/jwt/create/
   + in field "username": "пример/example" must contain password
 
  Пример ответа \ Response Example
+```
 {
     "refresh": "xxxxxxxxx",
     "access": "yyyyyyyyy"
-} 
+}
+```
 где \ where:
   + в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" данные для обновления токена
   + in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token
