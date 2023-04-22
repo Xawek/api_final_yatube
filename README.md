@@ -32,21 +32,21 @@ cd api_final_yatube
 
 
  + #### Создать \ Create
-  + ##### для \ for - Windows
+  * ##### для \ for - Windows
 ```
 python -m venv venv
 ```
-  + ##### для \ for - Linux
+  * ##### для \ for - Linux
 ```
 python3 -m venv venv
 ```
 
  + #### Активировать \ Activate
-  + ##### для \ for - Windows
+  * ##### для \ for - Windows
 ```
 source venv/Scripts/activate
 ```
-  + ##### для \ for - Linux
+  * ##### для \ for - Linux
 ```
 source venv/Bin/activate
 ```
@@ -64,11 +64,11 @@ python3 -m pip install --upgrade pip
 ## Установить модули и пакеты для проекта из файла requirements.txt \ Install modules and packages for project from file requirements.txt
 
  + ### Установка \ Installation
-  + #### для \ for - Windows
+  * #### для \ for - Windows
 ```
 pip install requirements.txt
 ```
-  + #### для \ for - Linux
+  * #### для \ for - Linux
 ```
 pip install requirements.txt
 ```
@@ -126,26 +126,26 @@ http://127.0.0.1:8000/api/v1/posts/
 http://127.0.0.1:8000/api/v1/posts/post_id/
 ```
 где \ where:
-  + post_id - идентификатор(цифровой) запрашиваемой публикации
-  + post_id - identifier (integer) requested publication
+  * post_id - идентификатор(цифровой) запрашиваемой публикации
+  * post_id - identifier (integer) requested publication
 
 + ### Получение комментариев публикации \ getting post comments (GET):
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/comments/
 ```
 где \ where:
-  + post_id - идентификатор(цифровой) запрашиваемой публикации
-  + post_id - identifier (integer) requested publication
+  * post_id - идентификатор(цифровой) запрашиваемой публикации
+  * post_id - identifier (integer) requested publication
 
 + ### Получение комментариев поста \ Getting comments post (GET):
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/comments/comments_id
 ```
 где \ where:
-  + post_id - идентификатор(цифровой) запрашиваемой публикации
-  + post_id - identifier (integer) requested publication
-  + comments_id - идентификатор(цифровой) запрашиваемого комментария
-  + comments_id - identifier (integer) requested commentary
+  * post_id - идентификатор(цифровой) запрашиваемой публикации
+  * post_id - identifier (integer) requested publication
+  * comments_id - идентификатор(цифровой) запрашиваемого комментария
+  * comments_id - identifier (integer) requested commentary
 
 + ### Получение списка групп публикаций \ Getting publications groups list (GET):
 ```
@@ -156,8 +156,8 @@ http://127.0.0.1:8000/api/v1/groups/
 http://127.0.0.1:8000/api/v1/groups/group_id/
 ```
 где \ where:
-  + group_id - идентификатор(PK - указывается при создании в админ-зоне) запрашиваемой группы публикаций
-  + group_id - identifier (PK - specified when creating in the admin area) the requested group publications
+  * group_id - идентификатор(PK - указывается при создании в админ-зоне) запрашиваемой группы публикаций
+  * group_id - identifier (PK - specified when creating in the admin area) the requested group publications
 
 
 ## Для авторизованных пользователей работа API доступна в полном обьёме \ For authorized users API is available in full
@@ -196,10 +196,10 @@ http://127.0.0.1:8000/api/v1/jwt/create/
 }
 ```
 где в графу "пример" \ where in field "example":
-  + поля "username": "пример/example" необходимо передать логин
-  + in field "username": "пример/example" must contain login
-  + поля "password": "пример/example" необходимо передать пароль
-  + in field "username": "пример/example" must contain password
+  * поля "username": "пример/example" необходимо передать логин
+  * in field "username": "пример/example" must contain login
+  * поля "password": "пример/example" необходимо передать пароль
+  * in field "username": "пример/example" must contain password
 
  Пример ответа \ Response Example
 ```
@@ -209,10 +209,10 @@ http://127.0.0.1:8000/api/v1/jwt/create/
 }
 ```
 где \ where:
-  + в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" данные для обновления токена
-  + in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token
-  + в поле "yyyyyyyyy" строки "access": "yyyyyyyyy" JWT-токен
-  + in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data is token
+  * в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" данные для обновления токена
+  * in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token
+  * в поле "yyyyyyyyy" строки "access": "yyyyyyyyy" JWT-токен
+  * in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data is token
 
 + ### обновить JWT-токен \ refresh JWT-token
 если ваш токен утрачен, украден или каким-то иным образом скомпрометирован, вам понадобится отключить его и получить новый
@@ -227,8 +227,8 @@ http://127.0.0.1:8000/api/v1/jwt/refresh/
   "refresh": "xxxxxxxxx"
 }
 ```
-  + в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" указать данные для обновления токена полученные ранее
-  + in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token (received earlier)
+  * в поле "xxxxxxxxx" строки "refresh": "xxxxxxxxx" указать данные для обновления токена полученные ранее
+  * in field "xxxxxxxxx" in "refresh": "xxxxxxxxx" data of update token (received earlier)
 
 + ### проверить JWT-токен \ validate JWT-token
 ```
@@ -248,12 +248,12 @@ http://127.0.0.1:8000/api/v1/posts/
 }
 ```
 где в графу "пример" \ where in field "example"
-  + поля "text": "пример", необходимо передать текст поста
-  + field "text": "example" must contain post text
-  + поля "image": "пример", необходимо передать закодированное в виде строки изображение или ничего
-  + field "image": "example" must contain string-encoded image or nothing
-  + поля "group": пример/example" необходимо передать id сообщества или ничего
-  + field "group": "example" must contain community id or nothing
+  * поля "text": "пример", необходимо передать текст поста
+  * field "text": "example" must contain post text
+  * поля "image": "пример", необходимо передать закодированное в виде строки изображение или ничего
+  * field "image": "example" must contain string-encoded image or nothing
+  * поля "group": пример/example" необходимо передать id сообщества или ничего
+  * field "group": "example" must contain community id or nothing
 
 
 + ### Создание коментария \ Create comment (POST):
@@ -261,8 +261,8 @@ http://127.0.0.1:8000/api/v1/posts/
 http://127.0.0.1:8000/api/v1/posts/post_id/comments/
 ```
 где \ where:
-  + post_id - номер запрашиваемого поста
-  + where post_id - is post number
+  * post_id - номер запрашиваемого поста
+  * where post_id - is post number
 
 в теле запроса передать \ pass in body of the request:
 ```
@@ -277,18 +277,18 @@ http://127.0.0.1:8000/api/v1/posts/post_id/comments/
 http://127.0.0.1:8000/api/v1/posts/post_id/
 ```
 где \ where:
-  + post_id - идентификатор(цифровой) нужной публикации
-  + post_id - identifier (integer) of desired publication
+  * post_id - идентификатор(цифровой) нужной публикации
+  * post_id - identifier (integer) of desired publication
 
 + ### Обновление коментария \ Comment update (PUT)/Частичное обновление коментария \ comment part update (PATCH)/Удаление комментария \ Delete comment (DELETE):
 ```
 http://127.0.0.1:8000/api/v1/posts/post_id/comments/comments_id
 ```
 где \ where:
-  + post_id - идентификатор(цифровой) нужной публикации
-  + post_id - identifier (integer) of desired publication
-  + comments_id - идентификатор(цифровой) нужного комментария
-  + comments_id - identifier (integer) of desired comment
+  * post_id - идентификатор(цифровой) нужной публикации
+  * post_id - identifier (integer) of desired publication
+  * comments_id - идентификатор(цифровой) нужного комментария
+  * comments_id - identifier (integer) of desired comment
 
 + ### Получение списка подпискок пользователя, сделавшего запрос \ Get list of subscriptions that request for user (GET)
 ```
@@ -299,5 +299,5 @@ http://127.0.0.1:8000/api/v1/follow/
 http://127.0.0.1:8000/api/v1/follow/
 ```
 + ### Дополнительная информация \ Additional Information:
-  + Возможен поиск по подпискам по параметру search \ You can search by subscriptions by parameter search
-  + Используется пагинация(LimitOffsetPagination) при указании параметров limit и offset при получение публикаций \ LimitOffsetPagination pagination is used in project, when receiving publications specifying you can use limit and offset parameters
+  * Возможен поиск по подпискам по параметру search \ You can search by subscriptions by parameter search
+  * Используется пагинация(LimitOffsetPagination) при указании параметров limit и offset при получение публикаций \ LimitOffsetPagination pagination is used in project, when receiving publications specifying you can use limit and offset parameters
