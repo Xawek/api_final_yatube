@@ -53,11 +53,11 @@ class FollowSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def validate(self, object):
+    def validate(self, follow_set):
         user = self.context['request'].user
-        follow = object['following']
+        follow = follow_set['following']
         if user == follow:
             raise serializers.ValidationError(
                 'Подписаться на себя? - Не сегодня!'
             )
-        return object
+        return follow_set
