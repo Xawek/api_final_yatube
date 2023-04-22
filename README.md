@@ -1,4 +1,4 @@
-# api_yatube (учебный проект, не коммерческий и не рекламный продукт)
+# api_yatube ###### (учебный проект, не коммерческий и не рекламный продукт)
 
 ## Описание проекта
 
@@ -105,10 +105,11 @@ _При переходе по ссылке http://127.0.0.1:8000/ (по умол
 _If you follow link http://127.0.0.1:8000/ (default) after starting the server, you will see an error page. Graphic display is not provided._
 
 ## Документация к API проекта Yatube (v1) \ Yatube project API documentation (v1)
-http://127.0.0.1:8000/redoc/ 
+http://127.0.0.1:8000/redoc/
 
 ## Остановить веб-сервер \ Stop web server
 Чтобы остановить веб-сервер нажми CTRL + C — кнопки Control и C вместе (в Windows может потребоваться нажать клавиши Ctrl + Break).
+
 To stop the web server, press CTRL + C - the Control and C buttons together (on Windows, you may need to press the Ctrl + Break keys).
 
 # Примеры работы с api_yatube \ Examples working api_yatube
@@ -153,8 +154,9 @@ http://127.0.0.1:8000/api/v1/groups/
 ```
 http://127.0.0.1:8000/api/v1/groups/group_id/
 ```
-где: group_id - идентификатор(PK - указывается при создании в админ-зоне) запрашиваемой группы публикаций
-where: group_id - identifier (PK - specified when creating in the admin area) the requested group publications
+где \ where:
+  + group_id - идентификатор(PK - указывается при создании в админ-зоне) запрашиваемой группы публикаций
+  + group_id - identifier (PK - specified when creating in the admin area) the requested group publications
 
 
 ## Для авторизованных пользователей работа API доступна в полном обьёме \ For authorized users API is available in full
